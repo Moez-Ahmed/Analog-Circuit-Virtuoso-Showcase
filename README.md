@@ -1,1 +1,6 @@
-# Analog-Circuit-Virtuoso-Showcase
+| Circuit | Key Specs & Design Decisions | Tool | Process |
+|---|---|---|---|
+| Sense Amplifiers | Three topologies implemented and compared: gated diode, voltage latch, and current mirror sense amplifier; analysis covers input-referred offset, regeneration speed, and noise sensitivity; topology selection rationalized against SRAM read SNM budget and bitline swing requirements | Cadence Virtuoso | gpdk045 |
+| Folded Cascode OTA | Designed to target specifications for DC gain, unity gain bandwidth, and phase margin; bias network sized for headroom across corners; AC analysis includes gain/phase Bode plots and stability verification; schematic → layout → DRC/LVS → PEX with post-layout AC performance comparison | Cadence Virtuoso | gpdk045 |
+| 8-bit SAR ADC | Comparator designed as a dynamic latch with kickback noise mitigation; capacitive DAC sized for unit capacitor matching and linearity; control logic implemented for successive approximation sequencing; performance characterized via DNL/INL plots and FFT-based SNDR/ENOB analysis; schematic → layout → DRC/LVS → PEX with post-layout linearity comparison | Cadence Virtuoso | gpdk045 |
+| Integer-N PLL | Sub-blocks designed and characterized independently — VCO with Kvco extraction, charge pump with current mismatch analysis, PFD with dead zone evaluation, and loop filter sized from target bandwidth and phase margin; closed-loop analysis covers lock time, phase noise, and reference spur rejection; schematic → layout → DRC/LVS → PEX | Cadence Virtuoso | gpdk045 |
